@@ -53,8 +53,8 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        $contact = Contact::findOrFail($id); // Retrieve the contact by id
-        return view('contacts.show', ['contact' => $contact]); // Pass the contact to the show view
+        $contact = Contact::findOrFail($id); 
+        return view('contacts.show', ['contact' => $contact]); 
     }
     
 
@@ -66,8 +66,8 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $contact = Contact::findOrFail($id); // Retrieve the contact by id
-        return view('contacts.edit', ['contact' => $contact]); // Pass the contact to the edit view
+        $contact = Contact::findOrFail($id); 
+        return view('contacts.edit', ['contact' => $contact]); 
     }
     
     /**
@@ -85,8 +85,8 @@ class ContactController extends Controller
             'email' => 'required|email'
         ]);
     
-        $contact = Contact::findOrFail($id); // Retrieve the contact by id
-        $contact->update($request->all()); // Update the contact details
+        $contact = Contact::findOrFail($id); 
+        $contact->update($request->all()); 
         return redirect('/contacts')->with('updated', 'Contact updated successfully!');
     }
     
@@ -99,8 +99,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        $contact = Contact::findOrFail($id); // Retrieve the contact by id
-        $contact->delete(); // Delete the contact
+        $contact = Contact::findOrFail($id); 
+        $contact->delete(); 
         return redirect('/contacts')->with('deleted', 'Contact deleted successfully!');
     }
 } 
